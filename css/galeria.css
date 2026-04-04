@@ -1,0 +1,108 @@
+/* --- Contenedor principal del carrusel --- */
+.slider-container {
+    width: 95%;
+    max-width: 1200px;
+    height: 450px; /* Altura ideal para que las 3 fotos luzcan bien */
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    /* Sombra usando el tono Dark Coffee #432818 de tu paleta */
+    box-shadow: 0 15px 35px rgba(67, 40, 24, 0.4); 
+}
+
+/* --- Tira de imágenes (Configurada para 6 fotos totales, 3 visibles) --- */
+.slider-wrapper {
+    display: flex;
+    /* Para mostrar 3 fotos a la vez con 6 fotos en total, el ancho es 200% */
+    width: 200%; 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    animation: slide-triple 25s infinite ease-in-out;
+}
+
+/* --- Cada slide individual (16.66% para que entren exactamente 3 por pantalla) --- */
+.slide {
+    flex: 0 0 16.6666%; 
+    height: 100%;
+    position: relative;
+    overflow: hidden; /* Clave para que el zoom no se escape del cuadro */
+    padding: 0 8px; /* Espaciado entre tus fotos locales */
+    box-sizing: border-box;
+}
+
+/* --- Imagen: Estática por defecto --- */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 12px;
+    filter: sepia(0.1) brightness(0.95);
+    /* Transición suave para cuando el usuario pase el mouse */
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
+}
+
+/* --- EL CAMBIO: Zoom solo al pasar el mouse --- */
+.slide:hover img {
+    transform: scale(1.15); /* El zoom ocurre aquí */
+    filter: sepia(0) brightness(1); /* Se aclara y pierde el sepia al mirar */
+}
+
+
+/* --- Etiquetas de texto --- */
+.caption {
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+    right: 20px;
+    background: rgba(67, 40, 24, 0.85); 
+    color: #FFE6A7; 
+    padding: 12px;
+    border-radius: 10px;
+    border-left: 5px solid #BB9457; 
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1rem;
+    text-align: center;
+    z-index: 10;
+    /* Evita que el texto bloquee el hover de la imagen */
+    pointer-events: none; 
+}
+
+/* --- ANIMACIONES --- */
+
+/* Movimiento por bloques: muestra las primeras 3 y luego las siguientes 3 */
+@keyframes slide-triple {
+    0%, 40% { transform: translateX(0); }       /* Muestra fotos 1, 2, 3 */
+    50%, 90% { transform: translateX(-50%); }    /* Desplaza para mostrar fotos 4, 5, 6 */
+    100% { transform: translateX(0); }
+}
+
+/* Zoom muy lento para dar vida a las imágenes */
+@keyframes zoom-slow {
+    from { transform: scale(1); }
+    to { transform: scale(1.12); }
+}
+
+/* Efecto de aparición suave para el texto */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Pausa el movimiento y el zoom cuando el usuario pasa el mouse */
+.slider-container:hover .slider-wrapper,
+.slider-container:hover img {
+    animation-play-state: paused;
+}
+
+/* --- Adaptación para Celulares (Responsive) --- */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 300px;
+    }
+    .caption {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}

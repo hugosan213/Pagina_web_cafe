@@ -1,27 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="spanish">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café Website</title>
+    <title>Mesal Café</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/galeria.css">
+    <link rel="stylesheet" href="./css/mapa.css">
+    <link rel="stylesheet" href="./css/sobre_nosotros.css">
+    <link rel="stylesheet" href="./css/titulo.css">
 </head>
 <body>
-    <header>
-        <h1>Mesal café</h1>
-    </header>
-    <nav>
-        <a href="#home">Home</a>
+    <nav class="navbar">
         <a href="#menu">Menu</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#galeria">Galería</a>
+        <a href="#inicio" ><img src="./assets/logoMesal.png" alt="MESAL logo"></a>
+        <a href="#sobre_nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
     </nav>
-    <main>
-        <h2>Discover Our Coffee</h2>
-        <p>Get the best coffee experience in town.</p>
-    </main>
+
+    <!--Componentes-->
+
+    <div id="titulo"></div>
+    <div id="galeria"></div>
+    <div id="sobre_nosotros"></div>
+    <div id="contacto"></div>
+
     <footer>
         <p>&copy; 2024 Our Café. All rights reserved.</p>
     </footer>
+
+    <script src="./js/main.js"></script>
 </body>
 </html>

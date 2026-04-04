@@ -1,0 +1,38 @@
+
+.contenido {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido {
+  background: url('../assets/assetsSN/Cafe-Arriba.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.texto_local {
+  width: 38%;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #43281881;
+  border-radius: 28px;
+  border: 2px solid var(--color-primary);
+}
+.texto_local h2 {
+    font-size: 3rem;
+    color: var(--color-chocolateBrown);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.texto_local p {
+    font-size: 1.5rem;
+    color: var(--color-lightApicot);
+    padding: 20px;
+}

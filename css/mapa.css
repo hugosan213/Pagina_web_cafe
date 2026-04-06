@@ -1,0 +1,63 @@
+
+.contenedor {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: center; /* 👈 esto es la clave */
+  margin-top: 100px;
+  font-family: 'Poppins', Arial;
+  background-color: var(--color-darkCoffee);
+}
+
+.texto-horarios {
+  max-width: 250px;
+  color: #ffff;
+}
+
+
+.texto-paginas a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.texto-paginas a:hover {
+   color: #eed64c; /* efecto hover tipo café */
+}
+
+
+/* LOGO */
+.logo img {
+  width: 150px; /* ajustá tamaño */
+  height: auto;
+}
+
+.texto-contacto i {
+  margin-right: 10px;
+  color: #BB9457; /* color café */
+}
+
+/* Estilos para los enlaces de contacto */
+
+.texto-contacto a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.texto-contacto a:hover {
+  color: #eed64c; /* efecto hover tipo café */
+}
+
+.contenedor h1 {
+  color: #bb9457;
+} 
+
+.contenedor p {
+  color: #bb9457;
+}
+
+.mapa {
+  border: 0;
+}
+

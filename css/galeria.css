@@ -1,3 +1,27 @@
+.galeria_imagenes {
+    background-color: #FFE6A7;
+    margin: 0;
+    padding: 0;
+}
+
+.titulo h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin-top: 40px;
+    color: #6F1D1B;
+    font-size: 2.5rem;
+}
+
+.subtitulo p {
+text-align:
+center; font-family: 'Montserrat', sans-serif;
+color: #432818;
+max-width: 700px;
+margin: 0 auto 40px;
+opacity: 0.9;
+}
+
 /* --- Contenedor principal del carrusel --- */
 .slider-container {
     width: 95%;

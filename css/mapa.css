@@ -9,9 +9,9 @@
   background-color: var(--color-darkCoffee);
 }
 
-.texto-horarios {
+.texto-horarios p {
   max-width: 250px;
-  color: #ffff;
+  color: #ffff !important;
 }
 
 
@@ -20,6 +20,7 @@
   color: inherit;
   display: block;
   margin-bottom: 5px;
+  color: white !important;
 }
 
 .texto-paginas a:hover {
@@ -35,7 +36,7 @@
 
 .texto-contacto i {
   margin-right: 10px;
-  color: #BB9457; /* color café */
+  color: var(--color-lightApicot); /* color café */
 }
 
 /* Estilos para los enlaces de contacto */
@@ -43,6 +44,7 @@
 .texto-contacto a {
   text-decoration: none;
   color: inherit;
+  color: white !important;
 }
 
 .texto-contacto a:hover {

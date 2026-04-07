@@ -1,5 +1,5 @@
 .galeria_imagenes {
-    background-color: #FFE6A7;
+    background-color: var(--color-darkCoffee);
     margin: 0;
     padding: 0;
 }
@@ -9,14 +9,14 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     margin-top: 40px;
-    color: #6F1D1B;
+    color: var(--color-lightApicot);
     font-size: 2.5rem;
 }
 
 .subtitulo p {
 text-align:
 center; font-family: 'Montserrat', sans-serif;
-color: #432818;
+color: var(--color-lightApicot);
 max-width: 700px;
 margin: 0 auto 40px;
 opacity: 0.9;
@@ -31,8 +31,6 @@ opacity: 0.9;
     overflow: hidden;
     border-radius: 20px;
     position: relative;
-    /* Sombra usando el tono Dark Coffee #432818 de tu paleta */
-    box-shadow: 0 15px 35px rgba(67, 40, 24, 0.4); 
 }
 
 /* --- Tira de imágenes (Configurada para 6 fotos totales, 3 visibles) --- */
@@ -63,16 +61,8 @@ opacity: 0.9;
     object-fit: cover; 
     border-radius: 12px;
     filter: sepia(0.1) brightness(0.95);
-    /* Transición suave para cuando el usuario pase el mouse */
-    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
-}
 
-/* --- EL CAMBIO: Zoom solo al pasar el mouse --- */
-.slide:hover img {
-    transform: scale(1.15); /* El zoom ocurre aquí */
-    filter: sepia(0) brightness(1); /* Se aclara y pierde el sepia al mirar */
 }
-
 
 /* --- Etiquetas de texto --- */
 .caption {
@@ -80,11 +70,10 @@ opacity: 0.9;
     bottom: 25px;
     left: 20px;
     right: 20px;
-    background: rgba(67, 40, 24, 0.85); 
-    color: #FFE6A7; 
+    background: var(--color-darkCoffee); 
+    color: var(--color-lightApicot); 
     padding: 12px;
     border-radius: 10px;
-    border-left: 5px solid #BB9457; 
     font-family: 'Montserrat', sans-serif; 
     font-size: 1rem;
     text-align: center;

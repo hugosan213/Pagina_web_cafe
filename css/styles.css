@@ -1,7 +1,7 @@
 :root {
   --color-darkWine: #6f1d1b;
   --color-camel: #bb9457;
-  --color-darkCoffee: #432818;
+  --color-darkCoffee: #1f1007;
   --color-chocolateBrown: #99582a;
   --color-lightApicot: #ffe6a7;
 }
@@ -10,6 +10,7 @@ body {
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    background-color: var(--color-darkCoffee);
 }
 
 .navbar {
@@ -23,7 +24,7 @@ body {
   align-items: center;
   gap: 100px;
   padding: 5px;
-  background: var(--color-camel);
+  background: var(--color-darkCoffee);
 }
 
 .navbar img {

@@ -36,3 +36,22 @@
     color: var(--color-lightApicot);
     padding: 20px;
 }
+
+@media (max-width: 768px) {
+    .texto_local {
+        width: 90%; /* Ahora el cuadro ocupa casi todo el ancho del celular */
+        min-height: auto;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .texto_local h2 {
+        font-size: 1.8rem; /* Título un poco más pequeño para que no se corte */
+        text-align: center;
+    }
+
+    .texto_local p {
+        font-size: 1.1rem; /* Tamaño de letra cómodo para lectura móvil */
+        line-height: 1.4;
+    }
+}

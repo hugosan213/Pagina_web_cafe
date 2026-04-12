@@ -63,3 +63,22 @@
   border: 0;
 }
 
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column; /* Apila el logo, los datos y el mapa uno debajo del otro */
+        gap: 40px; /* Reducimos el espacio entre elementos */
+        padding: 40px 20px;
+        margin-top: 50px;
+        text-align: center; /* Centramos los textos para que se vea mejor en vertical */
+    }
+
+    .texto-horarios p, 
+    .texto-contacto p {
+        max-width: 100%; /* Permitimos que el texto use todo el ancho disponible */
+    }
+
+    .mapa iframe {
+        width: 100% !important; /* El mapa de Google ahora ocupa todo el ancho del celu */
+        height: 300px;
+    }
+}

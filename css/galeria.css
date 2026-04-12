@@ -119,3 +119,36 @@ opacity: 0.9;
         padding: 8px;
     }
 }
+
+/* --- Ajuste Galería para Celulares --- */
+@media (max-width: 768px) {
+    .galeria_imagenes {
+        padding-top: 60px; /* Crea el espacio necesario para que no se pise con los contadores */
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .slider-container {
+        height: 320px;
+        /*margin: 20px auto;*/
+    }
+
+    .slider-wrapper {
+        width: 600%; 
+        animation: slide-simple 20s infinite ease-in-out;
+    }
+
+    .slide {
+        flex: 0 0 16.6666%;
+        padding: 0 5px;
+    }
+
+    @keyframes slide-simple {
+        0%, 15% { transform: translateX(0); }
+        20%, 35% { transform: translateX(-16.6666%); }
+        40%, 55% { transform: translateX(-33.3333%); }
+        60%, 75% { transform: translateX(-50%); }
+        80%, 95% { transform: translateX(-66.6666%); }
+        100% { transform: translateX(0); }
+    }
+}

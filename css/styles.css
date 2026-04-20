@@ -4,6 +4,7 @@
   --color-darkCoffee: #1f1007;
   --color-chocolateBrown: #99582a;
   --color-lightApicot: #ffe6a7;
+  --color-white:#fdfbf49a;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
   align-items: center;
   gap: 100px;
   padding: 5px;
-  background: var(--color-darkCoffee);
+  background: #ffff;
 }
 
 .navbar img {

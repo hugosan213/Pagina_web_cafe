@@ -12,3 +12,4 @@ cargarSeccion("seccion-hero", "./html/hero.html");
 cargarSeccion("galeria", "./html/galeria.html");
 cargarSeccion("sobre_nosotros", "./html/sobre_nosotros.html");
 cargarSeccion("contacto", "./html/mapa.html");
+

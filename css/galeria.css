@@ -1,154 +1,118 @@
-.galeria_imagenes {
-    background-color: var(--color-darkCoffee);
-    margin: 0;
+/* --- Base de la Galería --- */
+* {
     padding: 0;
-}
-
-.titulo h1 {
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    margin-top: 40px;
-    color: var(--color-lightApicot);
-    font-size: 2.5rem;
-}
-
-.subtitulo p {
-text-align:
-center; font-family: 'Montserrat', sans-serif;
-color: var(--color-lightApicot);
-max-width: 700px;
-margin: 0 auto 40px;
-opacity: 0.9;
-}
-
-/* --- Contenedor principal del carrusel --- */
-.slider-container {
-    width: 95%;
-    max-width: 1200px;
-    height: 450px; /* Altura ideal para que las 3 fotos luzcan bien */
-    margin: 40px auto;
-    overflow: hidden;
-    border-radius: 20px;
-    position: relative;
-}
-
-/* --- Tira de imágenes (Configurada para 6 fotos totales, 3 visibles) --- */
-.slider-wrapper {
-    display: flex;
-    /* Para mostrar 3 fotos a la vez con 6 fotos en total, el ancho es 200% */
-    width: 200%; 
-    height: 100%;
     margin: 0;
-    padding: 0;
-    animation: slide-triple 25s infinite ease-in-out;
-}
-
-/* --- Cada slide individual (16.66% para que entren exactamente 3 por pantalla) --- */
-.slide {
-    flex: 0 0 16.6666%; 
-    height: 100%;
-    position: relative;
-    overflow: hidden; /* Clave para que el zoom no se escape del cuadro */
-    padding: 0 8px; /* Espaciado entre tus fotos locales */
     box-sizing: border-box;
 }
 
-/* --- Imagen: Estática por defecto --- */
-.slide img {
+.galeria_imagenes {
+    position: relative;
+    width: 100%;
+    height: 450px; /* Aumentado un poco para los textos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: (--color-darkCoffee); /* Color café para el fondo */
+}
+
+.titulo h1 {
+    color: #ffe6a7;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+.subtitulo p {
+    color: #ffff;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+/* --- Contenedor del Carrusel --- */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.list {
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+}
+
+.list li {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
+    opacity: 0; /* Ocultas por defecto */
+    pointer-events: none;
+}
+
+.list li img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    border-radius: 12px;
-    filter: sepia(0.1) brightness(0.95);
-
+    object-fit: cover;
 }
 
-/* --- Etiquetas de texto --- */
-.caption {
-    position: absolute;
-    bottom: 25px;
-    left: 20px;
-    right: 20px;
-    background: var(--color-darkCoffee); 
-    color: var(--color-lightApicot); 
-    padding: 12px;
-    border-radius: 10px;
-    font-family: 'Montserrat', sans-serif; 
-    font-size: 1rem;
-    text-align: center;
+/* --- ESTADOS VISIBLES (Lo que faltaba) --- */
+
+/* Imagen Central */
+.list .act {
+    opacity: 1;
+    transform: translateX(0) scale(1.1); /* Un poco más grande */
     z-index: 10;
-    /* Evita que el texto bloquee el hover de la imagen */
-    pointer-events: none; 
+    pointer-events: auto;
 }
 
-/* --- ANIMACIONES --- */
-
-/* Movimiento por bloques: muestra las primeras 3 y luego las siguientes 3 */
-@keyframes slide-triple {
-    0%, 40% { transform: translateX(0); }       /* Muestra fotos 1, 2, 3 */
-    50%, 90% { transform: translateX(-50%); }    /* Desplaza para mostrar fotos 4, 5, 6 */
-    100% { transform: translateX(0); }
+/* Imagen a la izquierda */
+.list .prev {
+    opacity: 0.6;
+    transform: translateX(-280px) scale(0.85);
+    z-index: 5;
+    pointer-events: auto;
 }
 
-/* Zoom muy lento para dar vida a las imágenes */
-@keyframes zoom-slow {
-    from { transform: scale(1); }
-    to { transform: scale(1.12); }
+/* Imagen a la derecha */
+.list .next {
+    opacity: 0.6;
+    transform: translateX(280px) scale(0.85);
+    z-index: 5;
+    pointer-events: auto;
 }
 
-/* Efecto de aparición suave para el texto */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Imágenes preparadas para entrar (ocultas más lejos) */
+.list .hide {
+    opacity: 0;
+    transform: translateX(-450px) scale(0.6);
+    z-index: 1;
 }
 
-/* Pausa el movimiento y el zoom cuando el usuario pasa el mouse */
-.slider-container:hover .slider-wrapper,
-.slider-container:hover img {
-    animation-play-state: paused;
+.list .new-next {
+    opacity: 0;
+    transform: translateX(450px) scale(0.6);
+    z-index: 1;
 }
 
-/* --- Adaptación para Celulares (Responsive) --- */
-@media (max-width: 768px) {
-    .slider-container {
-        height: 300px;
-    }
-    .caption {
-        font-size: 0.8rem;
-        padding: 8px;
-    }
-}
-
-/* --- Ajuste Galería para Celulares --- */
-@media (max-width: 768px) {
-    .galeria_imagenes {
-        padding-top: 60px; /* Crea el espacio necesario para que no se pise con los contadores */
-        overflow: hidden;
-        width: 100%;
-    }
-
-    .slider-container {
-        height: 320px;
-        /*margin: 20px auto;*/
-    }
-
-    .slider-wrapper {
-        width: 600%; 
-        animation: slide-simple 20s infinite ease-in-out;
-    }
-
-    .slide {
-        flex: 0 0 16.6666%;
-        padding: 0 5px;
-    }
-
-    @keyframes slide-simple {
-        0%, 15% { transform: translateX(0); }
-        20%, 35% { transform: translateX(-16.6666%); }
-        40%, 55% { transform: translateX(-33.3333%); }
-        60%, 75% { transform: translateX(-50%); }
-        80%, 95% { transform: translateX(-66.6666%); }
-        100% { transform: translateX(0); }
-    }
+/* Área de interacción */
+.swipe {
+    width: 320px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    cursor: pointer;
 }

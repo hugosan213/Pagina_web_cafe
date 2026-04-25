@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesal Café – Menú</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/menu.css">
+</head>
+<body class="menu-page">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="../html/menu.html">Menu</a>
+    <a href="../main.html#galeria">Galería</a>
+    <a href="../main.html#seccion-hero"><img src="../assets/logoMesal.png" alt="MESAL logo"></a>
+    <a href="../main.html#sobre_nosotros">Nosotros</a>
+    <a href="../main.html#contacto">Contacto</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="menu-hero">
+    <div class="menu-hero-overlay"></div>
+    <div class="menu-hero-content">
+      <p class="menu-hero-sub">– Nuestra Carta –</p>
+      <h1 class="menu-hero-title">Menú</h1>
+    </div>
+  </header>
+
+  <!-- TABS — generadas por menu.js -->
+  <div class="menu-tabs-wrapper">
+    <div class="menu-tabs"></div>
+  </div>
+
+  <!-- SECCIONES — generadas por menu.js -->
+  <main class="menu-container"></main>
+
+  <!-- DISCLAIMER -->
+  <div class="menu-disclaimer">
+    <p><strong>Derecho de admisión reservado.</strong> No se permite comida ni bebida del exterior. No se divide la cuenta. Se agrega un 10% de cargo por servicio para mesas de 6 o más.</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Mesal Café. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Primero los datos, después la lógica -->
+  <script src="../js/menu-data.js"></script>
+  <script src="../js/menu.js"></script>
+
+</body>
+</html>

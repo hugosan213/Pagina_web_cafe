@@ -5,6 +5,7 @@
   --color-chocolateBrown: #99582a;
   --color-lightApicot: #ffe6a7;
   --color-white:#fdfbf49a;
+  --color-whitey:#ffff;
 }
 
 body {
@@ -20,20 +21,20 @@ body {
   z-index: 1000;
   width: 100%;
   height: 80px;
-  display: flex;
+  display: flex;  
   justify-content: center;
   align-items: center;
   gap: 100px;
   padding: 5px;
-  background-color: var(--color-darkCoffee);
+  background-color: var(--color-whitey);
 }
 
 .navbar img {
-  height: 80px;
+  height: 50px;
   object-fit: contain;
 }
 .navbar a {
-  color: var(--color-lightApicot);
+  color: #79290e;
   text-decoration: none;
   font-size: 18px;
 }
